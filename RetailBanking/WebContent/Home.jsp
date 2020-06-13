@@ -43,7 +43,7 @@
                                                         <div role="menu" class="dropdown-menu animated zoomIn">
                                                             <a href="CreateCustomer.jsp" class="dropdown-item">Create Customer</a>
                                                             <a href="CustomerSearch.jsp" class="dropdown-item">Update Customer</a>
-                                                            <a href="DeleteCustomer.jsp" class="dropdown-item">Delete Customer</a>
+                                                            <a href="CustomerSearch.jsp" class="dropdown-item">Delete Customer</a>
                                                             <a href="CustomerStatus.jsp" class="dropdown-item">Customer Status</a>
                                                         </div>
                                                     </li>

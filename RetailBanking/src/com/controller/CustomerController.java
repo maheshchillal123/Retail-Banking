@@ -74,7 +74,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(request.getParameter("source").equals("UpdateCustomer")) {
+		if(request.getParameter("operation").equals("updateCustomer")) {
 			
 		}
 	}

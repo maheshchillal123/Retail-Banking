@@ -43,8 +43,8 @@
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Customer Management <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                         <div role="menu" class="dropdown-menu animated zoomIn">
                                                             <a href="CreateCustomer.jsp" class="dropdown-item">Create Customer</a>
-                                                            <a href="UpdateCustomer.jsp" class="dropdown-item">Update Customer</a>
-                                                            <a href="DeleteCustomer.jsp" class="dropdown-item">Delete Customer</a>
+                                                            <a href="SearchCustomer.jsp" class="dropdown-item">Update Customer</a>
+                                                            <a href="SearchCustomer.jsp" class="dropdown-item">Delete Customer</a>
                                                             <a href="CustomerStatus.jsp" class="dropdown-item">Customer Status</a>
                                                         </div>
                                                     </li>
@@ -142,7 +142,19 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                
+                                                <div class="form-group-inner">
+                                                        <div class="login-btn-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-3"></div>
+                                                                <div class="col-lg-9">
+                                                                    <div class="login-horizental cancel-wp pull-left form-bc-ele">
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="button" onclick="location.href = 'UpdateCustomer.jsp';">Update</button>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="button" onclick="location.href = 'DeleteCustomer.jsp';">Dalete</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                
                                             </div>
                                         </div>
                                     </div>
