@@ -43,7 +43,7 @@
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Customer Management <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                         <div role="menu" class="dropdown-menu animated zoomIn">
                                                             <a href="CreateCustomer.jsp" class="dropdown-item">Create Customer</a>
-                                                            <a href="UpdateCustomer.jsp" class="dropdown-item">Update Customer</a>
+                                                            <a href="CustomerSearch.jsp" class="dropdown-item">Update Customer</a>
                                                             <a href="DeleteCustomer.jsp" class="dropdown-item">Delete Customer</a>
                                                             <a href="CustomerStatus.jsp" class="dropdown-item">Customer Status</a>
                                                         </div>
@@ -98,6 +98,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
                                                 <form action="CustomerController" method="post">
+                                                	<input type="hidden" name="source" value="UpdateCustomer">
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -200,7 +201,7 @@
                                                                 <div class="col-lg-3"></div>
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="submit">Cancel</button>
+                                                                        <button class="btn btn-white" type="reset">Cancel</button>
                                                                         <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Update</button>
                                                                     </div>
                                                                 </div>

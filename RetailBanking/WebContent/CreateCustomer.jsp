@@ -43,7 +43,7 @@
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Customer Management <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                         <div role="menu" class="dropdown-menu animated zoomIn">
                                                             <a href="CreateCustomer.jsp" class="dropdown-item">Create Customer</a>
-                                                            <a href="UpdateCustomer.jsp" class="dropdown-item">Update Customer</a>
+                                                            <a href="CustomerSearch.jsp" class="dropdown-item">Update Customer</a>
                                                             <a href="DeleteCustomer.jsp" class="dropdown-item">Delete Customer</a>
                                                             <a href="CustomerStatus.jsp" class="dropdown-item">Customer Status</a>
                                                         </div>
@@ -98,6 +98,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
                                                 <form action="CustomerController" method="post">
+                                                	<input type="hidden" name="source" value="CreateCustomer">
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -116,7 +117,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Customer Name</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="text" class="form-control" />
+                                                                <input type="text" class="form-control" name="cust_name"/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -128,7 +129,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Age</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="number" class="form-control" />
+                                                                <input type="number" class="form-control" name="cust_age"/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -140,7 +141,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Address</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="text" class="form-control" />
+                                                                <input type="text" class="form-control" name="cust_address"/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -153,11 +154,11 @@
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <div class="form-select-list">
-                                                                    <select class="form-control custom-select-value" name="account">
-																			<option>Select 1</option>
-																			<option>Select 2</option>
-																			<option>Select 3</option>
-																			<option>Select 4</option>
+                                                                    <select class="form-control custom-select-value" name="cust_state">
+																			<option value="Maharashtra">Maharashtra</option>
+																			<option value="">Select 2</option>
+																			<option value="">Select 3</option>
+																			<option value="">Select 4</option>
 																		</select>
                                                                 </div>
                                                             </div>
@@ -172,11 +173,11 @@
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <div class="form-select-list">
-                                                                    <select class="form-control custom-select-value" name="account">
-																			<option>Select 1</option>
-																			<option>Select 2</option>
-																			<option>Select 3</option>
-																			<option>Select 4</option>
+                                                                    <select class="form-control custom-select-value" name="cust_city">
+																			<option value="Solapur">Solapur</option>
+																			<option value="Pune">Pune</option>
+																			<option value="Mumbai">Mumbai</option>
+																			<option value="Benglore">Benglore</option>
 																		</select>
                                                                 </div>
                                                             </div>
@@ -190,7 +191,7 @@
                                                                 <div class="col-lg-3"></div>
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="submit">Cancel</button>
+                                                                        <button class="btn btn-white" type="reset">Cancel</button>
                                                                         <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
                                                                     </div>
                                                                 </div>

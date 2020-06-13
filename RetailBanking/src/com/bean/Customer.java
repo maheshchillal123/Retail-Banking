@@ -2,6 +2,7 @@ package com.bean;
 
 public class Customer {
 	private int cust_ssn;
+	private int cust_id;
 	private String cust_name;
 	private int cust_age;
 	private String cust_address;
@@ -12,6 +13,12 @@ public class Customer {
 	}
 	public void setCust_ssn(int cust_ssn) {
 		this.cust_ssn = cust_ssn;
+	}
+	public int getCust_id() {
+		return cust_id;
+	}
+	public void setCust_id(int cust_id) {
+		this.cust_id = cust_id;
 	}
 	public String getCust_name() {
 		return cust_name;
