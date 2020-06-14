@@ -43,8 +43,8 @@
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Customer Management <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                         <div role="menu" class="dropdown-menu animated zoomIn">
                                                             <a href="CreateCustomer.jsp" class="dropdown-item">Create Customer</a>
-                                                            <a href="CustomerSearch.jsp" class="dropdown-item">Update Customer</a>
-                                                            <a href="CustomerSearch.jsp" class="dropdown-item">Delete Customer</a>
+                                                            <a href="UpdateCustomer.jsp" class="dropdown-item">Update Customer</a>
+                                                            <a href="DeleteCustomer.jsp" class="dropdown-item">Delete Customer</a>
                                                             <a href="CustomerStatus.jsp" class="dropdown-item">Customer Status</a>
                                                         </div>
                                                     </li>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 </br>
-                <div class="row">
+                <div class="row" style="margin-right: 0px;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="sparkline12-list">
                             <div class="sparkline12-hd">

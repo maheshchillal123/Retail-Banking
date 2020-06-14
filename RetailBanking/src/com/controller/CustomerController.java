@@ -3,6 +3,7 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -74,9 +75,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		if(request.getParameter("operation").equals("updateCustomer")) {
-			
-		}
+		
 	}
 
 }
