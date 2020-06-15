@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.Customer;
+import com.dao.UpdateCustomerStatusMessageDao;
 import com.service.UpdateCustomerService;
 
 /**
@@ -51,6 +52,7 @@ public class UpdateCustomerController extends HttpServlet {
 		try {
 			boolean flag=service.UpdateCustomerDataService(cust);
 			if(flag) {
+				boolean updatemsg=UpdateCustomerStatusMessageDao.UpdateCustomerStatus(cust.getCust_ssn(), cust.getCust_id(), "Customer Updated");
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Customer Data Updated Successfully');");
 				out.println("location='UpdateCustomer.jsp'");

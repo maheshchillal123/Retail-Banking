@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.Customer;
+import com.dao.UpdateCustomerStatusMessageDao;
 import com.service.DeleteCustomerService;
 
 /**
@@ -47,6 +48,7 @@ public class DeleteCustomerController extends HttpServlet {
 		try {
 			boolean flag=service.DeleteCustomerDataService(Integer.parseInt(request.getParameter("cust_id")));
 			if(flag) {
+				boolean updatemsg=UpdateCustomerStatusMessageDao.UpdateCustomerStatus(cust.getCust_ssn(), Integer.parseInt(request.getParameter("cust_id")), "Customer Deleted");
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Customer Data Deleted Successfully');");
 				out.println("location='DeleteCustomer.jsp'");

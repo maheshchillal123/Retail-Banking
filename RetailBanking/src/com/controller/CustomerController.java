@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.Customer;
+import com.dao.UpdateCustomerStatusMessageDao;
 import com.service.CustomerService;
 
 /**
@@ -47,8 +48,8 @@ public class CustomerController extends HttpServlet {
 		Customer cust=new Customer();
 		
 		if(request.getParameter("source").equals("CreateCustomer")) {
-			
-			cust.setCust_ssn(Integer.parseInt(request.getParameter("cust_ssn")));
+			String ssn=request.getParameter("cust_ssn");
+			cust.setCust_ssn(Integer.parseInt(ssn));
 			cust.setCust_name(request.getParameter("cust_name"));
 			cust.setCust_age(Integer.parseInt(request.getParameter("cust_age")));
 			cust.setCust_address(request.getParameter("cust_address"));
@@ -58,6 +59,7 @@ public class CustomerController extends HttpServlet {
 				boolean flag=service.createCustomerService(cust);
 				if(flag) {
 					int customer_id=service.getCustomerIdservice();
+					boolean updatemsg=UpdateCustomerStatusMessageDao.UpdateCustomerStatus(cust.getCust_ssn(), cust.getCust_id(), "Customer Created");
 					String msg=cust.getCust_name()+" your SSN number is "+cust.getCust_ssn()+" and Customer Id is "+customer_id+" note Down for future refrence.";
 					out.println("<script type=\"text/javascript\">");
 					out.println("alert('" + msg +"')");
