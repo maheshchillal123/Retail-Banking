@@ -158,7 +158,7 @@
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="all-form-element-inner">
-											<form action="CustomerController" method="post">
+											<form action="DeleteCustomerController" method="post">
 												<div class="form-group-inner">
 													<div class="row">
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -166,7 +166,7 @@
 																SSN Id</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" name="cust_ssn" />
+															<input type="number" class="form-control" id="cust_ssn" name="cust_ssn" readonly="readonly"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -178,7 +178,7 @@
 																ID</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" name="cust_id" />
+															<input type="number" class="form-control" id="cust_id" name="cust_id" readonly="readonly"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -190,7 +190,7 @@
 																Name</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="text" class="form-control" name="cust_name" />
+															<input type="text" class="form-control" id="cust_name" name="cust_name" readonly="readonly"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -201,7 +201,7 @@
 															<label class="login2 pull-right pull-right-pro">Age</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" name="cust_age" />
+															<input type="number" class="form-control" id="cust_age" name="cust_age" readonly="readonly"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -212,8 +212,8 @@
 															<label class="login2 pull-right pull-right-pro">Address</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="text" class="form-control"
-																name="cust_address" />
+															<input type="text" class="form-control" id="cust_address"
+																name="cust_address" readonly="readonly"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -266,6 +266,43 @@
 	<!-- bootstrap JS
 		============================================ -->
 	<script src="js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+		function getInfo() {
+			debugger;
+			var ssn = '';
+			var id = '';
+			if (document.getElementById('customer_ssn').value != null) {
+				ssn = document.getElementById('customer_ssn').value;
+			}
+			if (document.getElementById('customer_id').value != null) {
+				id = document.getElementById('customer_id').value;
+			}
+			$
+					.ajax({
+						url : 'GetCustomerDataController',
+						data : {
+							ssn : ssn,
+							id : id
+						},
+						success : function(responseText) {
+							console.log(responseText);
+							var obj = JSON.parse(responseText);
+							document.getElementById('cust_ssn').value = obj.cust_ssn;
+							document.getElementById('cust_id').value = obj.cust_id;
+							document.getElementById('cust_name').value = obj.cust_name;
+							document.getElementById('cust_address').value = obj.cust_address;
+							document.getElementById('cust_age').value = obj.cust_age;
+						},
+						//If there was no resonse from the server
+						error : function(jqXHR, textStatus, errorThrown) {
+							console.log("Something really bad happened "
+									+ textStatus);
+							$("#ajaxResponse").html(jqXHR.responseText);
+						},
+					});
+		}
+	</script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@ public class CustomerDao {
 	public boolean createCustomerDao(Customer cust) throws SQLException {
 		// TODO Auto-generated method stub
 		con = DatabaseUtil.getConnection();
-		String query="INSERT INTO casestudy.customer(SSN,Name,Address,Age,State,City)VALUES(?,?,?,?,?,?)";
+		String query="INSERT INTO casestudy.customer(SSN,Name,Address,Age,State,City,status)VALUES(?,?,?,?,?,?,?)";
 		ps=con.prepareStatement(query);
 		ps.setInt(1, cust.getCust_ssn());
 		ps.setString(2, cust.getCust_name());
@@ -24,6 +24,7 @@ public class CustomerDao {
 		ps.setInt(4, cust.getCust_age());
 		ps.setString(5, cust.getCust_state());
 		ps.setString(6, cust.getCust_city());
+		ps.setString(7, "Active");
 		
 		int result = ps.executeUpdate();
 		DatabaseUtil.closeStatement(ps);

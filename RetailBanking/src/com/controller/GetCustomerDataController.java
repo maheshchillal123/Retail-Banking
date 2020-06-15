@@ -14,6 +14,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.json.simple.JSONObject;
 
 import com.bean.Customer;
+import com.dao.GetCustomerStatusDao;
 import com.service.CustomerService;
 import com.service.GetCustomerDataService;
 
@@ -40,28 +41,32 @@ public class GetCustomerDataController extends HttpServlet {
 		
 		String ssn = request.getParameter("ssn").trim();
 		String id=request.getParameter("id").trim();
-
 		
 		PrintWriter out = response.getWriter();
 		GetCustomerDataService service=new GetCustomerDataService();
 		Customer cust=new Customer();
 		System.out.println("hello");
-		
-		
-		
+
 		try {
-			
-			Customer cust_info=service.getUpdateDetailsService(ssn,id);
-			
-			ObjectMapper mapper = new ObjectMapper();
-		      //Converting the Object to JSONString
-		      String jsonString = mapper.writeValueAsString(cust_info);
-			
-			response.setContentType("text/plain");
-			response.getWriter().write(jsonString);
-		} catch (SQLException e) {
+			String status=GetCustomerStatusDao.getCustomerStatus(ssn,id);
+			if(status.equals("Active")) {
+				Customer cust_info=service.getUpdateDetailsService(ssn,id);
+				
+				ObjectMapper mapper = new ObjectMapper();
+			      //Converting the Object to JSONString
+			      String jsonString = mapper.writeValueAsString(cust_info);
+				
+				response.setContentType("text/plain");
+				response.getWriter().write(jsonString);
+			}
+			else {
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('Customer Not Exist');");
+				out.println("</script>");
+			}
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 	}
 
