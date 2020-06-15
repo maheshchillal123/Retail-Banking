@@ -114,37 +114,39 @@
 							<div class="basic-login-form-ad">
 
 								<div class="all-form-element-inner">
-										<input type="hidden" name="source" value="SearchCustomer">
-										<div class="row">
-											<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-												<label class="login2 pull-right pull-right-pro"
-													style="margin: 0px; padding: 10px 0px;">Enter
-													Customer SSN ID</label>
-											</div>
-											<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-												<input type="number" class="form-control" id="customer_ssn" name="customer_ssn" />
-											</div>
-											<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
-												<label class="login2 pull-right pull-right-pro"
-													style="margin: 0px; padding: 10px 0px;"><h4>OR</h4></label>
-											</div>
-											<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-												<label class="login2 pull-right pull-right-pro"
-													style="margin: 0px; padding: 10px 0px;">Enter
-													Customer ID</label>
-											</div>
-											<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-												<input type="number" class="form-control" id="customer_id" name="customer_id" />
-											</div>
-											<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-												<div class="cancel-wp pull-left form-bc-ele">
-													<button class="btn btn-white" type="reset">Cancel</button>
-													<button class="btn btn-sm btn-primary login-submit-cs"
-														type="submit" onclick="getInfo()">Search</button>
-												</div>
-											</div>
-
+									<input type="hidden" name="source" value="SearchCustomer">
+									<div class="row">
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;">Enter
+												Customer SSN ID</label>
 										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<input type="number" class="form-control" id="customer_ssn"
+												name="customer_ssn" />
+										</div>
+										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;"><h4>OR</h4></label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;">Enter
+												Customer ID</label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<input type="number" class="form-control" id="customer_id"
+												name="customer_id" />
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+											<div class="cancel-wp pull-left form-bc-ele">
+												<button class="btn btn-white" type="reset">Cancel</button>
+												<button class="btn btn-sm btn-primary login-submit-cs"
+													type="submit" onclick="getInfo()">Search</button>
+											</div>
+										</div>
+
+									</div>
 
 								</div>
 
@@ -162,8 +164,8 @@
 																SSN Id</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" id="cust_ssn" name="cust_ssn"
-																readonly />
+															<input type="number" class="form-control" id="cust_ssn"
+																name="cust_ssn" readonly />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -175,8 +177,8 @@
 																ID</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" id="cust_id" name="cust_id"
-																readonly />
+															<input type="number" class="form-control" id="cust_id"
+																name="cust_id" readonly />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -214,8 +216,8 @@
 																Address</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="text" class="form-control" id="oldcust_address"
-																name="oldcust_address" readonly />
+															<input type="text" class="form-control"
+																id="oldcust_address" name="oldcust_address" readonly />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -227,8 +229,8 @@
 																Address</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="text" class="form-control" id="newcust_address"
-																name="newcust_address" />
+															<input type="text" class="form-control"
+																id="newcust_address" name="newcust_address" />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -240,8 +242,8 @@
 																Age</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" id="oldcust_age"
-																name="oldcust_age" readonly />
+															<input type="number" class="form-control"
+																id="oldcust_age" name="oldcust_age" readonly />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -253,8 +255,8 @@
 																Age</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" id="newcust_age"
-																name="newcust_age" />
+															<input type="number" class="form-control"
+																id="newcust_age" name="newcust_age" />
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -306,39 +308,41 @@
 	<!-- bootstrap JS
 		============================================ -->
 	<script src="js/bootstrap.min.js"></script>
-	
+
 	<script type="text/javascript">
 		function getInfo() {
 			debugger;
-			var ssn='';
-			var id='';
-			if(document.getElementById('customer_ssn').value!=null){
-			ssn=document.getElementById('customer_ssn').value;
-		}
-		if(document.getElementById('customer_id').value!=null){
-			id=document.getElementById('customer_id').value;
-		}
-			$.ajax({
-				url : 'GetCustomerDataController',
-				data : {
-					ssn : ssn,
-					id : id
-				},
-				success : function(responseText) {
-					console.log(responseText);
-					var obj=JSON.parse(responseText);
-					document.getElementById('cust_ssn').value=obj.cust_ssn;
-					document.getElementById('cust_id').value=obj.cust_id;
-					document.getElementById('oldcust_name').value=obj.cust_name;
-					document.getElementById('oldcust_address').value=obj.cust_address;
-					document.getElementById('oldcust_age').value=obj.cust_age;
-				},
-				//If there was no resonse from the server
-                error: function(jqXHR, textStatus, errorThrown){
-                     console.log("Something really bad happened " + textStatus);
-                      $("#ajaxResponse").html(jqXHR.responseText);
-                },
-			});
+			var ssn = '';
+			var id = '';
+			if (document.getElementById('customer_ssn').value != null) {
+				ssn = document.getElementById('customer_ssn').value;
+			}
+			if (document.getElementById('customer_id').value != null) {
+				id = document.getElementById('customer_id').value;
+			}
+			$
+					.ajax({
+						url : 'GetCustomerDataController',
+						data : {
+							ssn : ssn,
+							id : id
+						},
+						success : function(responseText) {
+							console.log(responseText);
+							var obj = JSON.parse(responseText);
+							document.getElementById('cust_ssn').value = obj.cust_ssn;
+							document.getElementById('cust_id').value = obj.cust_id;
+							document.getElementById('oldcust_name').value = obj.cust_name;
+							document.getElementById('oldcust_address').value = obj.cust_address;
+							document.getElementById('oldcust_age').value = obj.cust_age;
+						},
+						//If there was no resonse from the server
+						error : function(jqXHR, textStatus, errorThrown) {
+							console.log("Something really bad happened "
+									+ textStatus);
+							$("#ajaxResponse").html(jqXHR.responseText);
+						},
+					});
 		}
 	</script>
 </body>
