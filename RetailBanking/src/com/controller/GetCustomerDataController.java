@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 
 import com.bean.Customer;
 import com.service.CustomerService;
+import com.service.GetCustomerDataService;
 
 /**
  * Servlet implementation class GetCustomerDataController
@@ -42,7 +43,7 @@ public class GetCustomerDataController extends HttpServlet {
 
 		
 		PrintWriter out = response.getWriter();
-		CustomerService service=new CustomerService();
+		GetCustomerDataService service=new GetCustomerDataService();
 		Customer cust=new Customer();
 		System.out.println("hello");
 		
