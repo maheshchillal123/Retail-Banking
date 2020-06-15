@@ -8,6 +8,15 @@ public class Customer {
 	private String cust_address;
 	private String cust_state;
 	private String cust_city;
+	private String status;
+	private String msg;
+	private String last_update;
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 	public int getCust_ssn() {
 		return cust_ssn;
 	}
@@ -49,6 +58,18 @@ public class Customer {
 	}
 	public void setCust_city(String cust_city) {
 		this.cust_city = cust_city;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getLast_update() {
+		return last_update;
+	}
+	public void setLast_update(String last_update) {
+		this.last_update = last_update;
 	}
 	
 	
