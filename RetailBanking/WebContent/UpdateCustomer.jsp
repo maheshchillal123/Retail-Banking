@@ -153,7 +153,7 @@
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="all-form-element-inner">
-											<form action="CustomerController" method="post">
+											<form action="UpdateCustomerController" method="post">
 												<input type="hidden" name="source" value="UpdateCustomer">
 												<div class="form-group-inner">
 													<div class="row">
