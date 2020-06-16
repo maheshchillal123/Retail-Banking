@@ -248,7 +248,7 @@
 	                
 			        $.each(obj, function (i, item) {
 			            
-			            trHTML += '<tr><td>' + item.acc_id + '</td><td>' + item.acc_type + '</td><td><a href="">Delete</a></td></tr>';
+			            trHTML += '<tr><td>' + item.acc_id + '</td><td>' + item.acc_type + '</td><td><a href=DeleteAccountController?account_id='+item.acc_id+'>Delete</a></td></tr>';
 			        });
 			        
 			        $('#table').append(trHTML);

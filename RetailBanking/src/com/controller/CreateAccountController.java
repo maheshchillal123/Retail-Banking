@@ -67,7 +67,7 @@ public class CreateAccountController extends HttpServlet {
 			}
 			else {
 				out.println("<script type=\"text/javascript\">");
-				out.println("alert('Customer not registered. Register again');");
+				out.println("alert('Account not Created. Create again');");
 				out.println("location='event.jsp'");
 				out.println("</script>");
 			}
