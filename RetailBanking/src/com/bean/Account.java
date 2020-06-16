@@ -1,5 +1,7 @@
 package com.bean;
 
+import java.util.ArrayList;
+
 public class Account {
 	private int cust_id;
 	private int acc_id;
