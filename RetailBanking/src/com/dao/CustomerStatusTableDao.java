@@ -17,11 +17,12 @@ public class CustomerStatusTableDao {
 		// TODO Auto-generated method stub
 		ResultSet result = null;
 		con = DatabaseUtil.getConnection();
-		ps = con.prepareStatement("select cust.SSN,cust.Customer_id,cust.status,newtable.Message,newtable.lastupdate from casestudy.customer as cust inner join" + 
-				"(select main.customer_id, main.message, main.lastupdate" + 
-				"from casestudy.customer_status main" + 
-				"inner join (select Customer_id, max(lastupdate) as lastupdate FROM casestudy.customer_status group by customer_id) sec" + 
-				"on main.customer_id = sec.customer_id and main.lastupdate = sec.lastupdate) as newtable on cust.Customer_id=newtable.customer_id");
+		String query="select cust.SSN,cust.Customer_id,cust.status,newtable.Message,newtable.lastupdate from casestudy.customer as cust inner join" + 
+				" (select main.customer_id, main.message, main.lastupdate" + 
+				" from casestudy.customer_status main" + 
+				" inner join (select Customer_id, max(lastupdate) as lastupdate FROM casestudy.customer_status group by customer_id) sec" + 
+				" on main.customer_id = sec.customer_id and main.lastupdate = sec.lastupdate) as newtable on cust.Customer_id=newtable.customer_id";
+		ps = con.prepareStatement(query);
 		result = ps.executeQuery();
 		ArrayList<Customer> customerList = new ArrayList<Customer>();
 		while (result.next()) {

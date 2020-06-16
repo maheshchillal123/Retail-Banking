@@ -140,7 +140,32 @@
 													<th>Last Updated</th>
 													<th>Operations</th>
 												</tr>
-												<tr>
+												<%
+												
+													for(Customer cu:cust){
+														%><tr>
+													<td><%=cu.getCust_id() %></td>
+													<td><%=cu.getCust_ssn() %></td>
+													<td><%
+														if(cu.getStatus().equals("Active")){
+															%>
+																<button class="pd-setting" disabled="disabled"><%=cu.getStatus() %></button>	
+															<%
+														}else{
+															%>
+																<button class="ds-setting" disabled="disabled"><%=cu.getStatus() %></button>
+															<%
+														}
+													%>
+													</td>
+													<td><%=cu.getMsg() %></td>
+													<td><%=cu.getLast_update() %></td>
+													<td><a href="CustomerStatus.jsp">Refresh</a></td>
+												</tr><%
+													}
+												
+												%>
+												<!-- <tr>
 													<td>111</td>
 													<td>111</td>
 													<td>
@@ -149,8 +174,8 @@
 													<td>Account Created</td>
 													<td>6-15-2020 10:11:10</td>
 													<td><a href="">Refresh</a></td>
-												</tr>
-												<tr>
+												</tr> -->
+												<!-- <tr>
 													<td>111</td>
 													<td>111</td>
 													<td>
@@ -159,7 +184,7 @@
 													<td>Account Created</td>
 													<td>6-15-2020 10:11:10</td>
 													<td><a href="">Refresh</a></td>
-												</tr>
+												</tr> -->
 											</table>
 										</div>
 										<div class="custom-pagination">
