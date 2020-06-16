@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
-<%@ page import ="java.util.ArrayList"%>
-<%@ page import="com.bean.Customer" %>
-<%@ page import="com.service.CustomerStatusTableService" %>
+
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.bean.Customer"%>
+<%@ page import="com.service.CustomerStatusTableService"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +29,12 @@
 <!-- custom CSS
 		============================================ -->
 <link rel="stylesheet" href="css/custom.css">
+<!-- normalize CSS
+		============================================ -->
+<link rel="stylesheet" href="css/bootstrap-table.css">
+<!-- responsive CSS
+		============================================ -->
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 	<div class="all-content-wrapper" style="margin-left: 0;">
@@ -112,116 +118,117 @@
 								</center>
 							</div>
 						</div>
-						
-						<%
-						ArrayList<Customer> cust=new ArrayList<Customer>();
-						CustomerStatusTableService service=new CustomerStatusTableService();
-						cust=service.getCustomerStatusTable();
-							
-						%>
-						
-						
-						
-						
-						<div class="sparkline12-graph">
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-									<div class="product-status-wrap">
-										<h4>Customer Records</h4>
-										
-										<div class="asset-inner">
-											<table>
-												<tr>
-													<th>Customer ID</th>
-													<th>Customer SSN ID</th>
-													<th>Status</th>
-													<th>Message</th>
-													<th>Last Updated</th>
-													<th>Operations</th>
-												</tr>
-												<%
-												
-													for(Customer cu:cust){
-														%><tr>
-													<td><%=cu.getCust_id() %></td>
-													<td><%=cu.getCust_ssn() %></td>
-													<td><%
-														if(cu.getStatus().equals("Active")){
-															%>
-																<button class="pd-setting" disabled="disabled"><%=cu.getStatus() %></button>	
+						<%
+							ArrayList<Customer> cust = new ArrayList<Customer>();
+						CustomerStatusTableService service = new CustomerStatusTableService();
+						cust = service.getCustomerStatusTable();
+						%>
+
+						<!-- Static Table Start -->
+						<div class="data-table-area mg-b-15">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="sparkline13-list">
+											<div class="sparkline13-hd">
+												<div class="main-sparkline13-hd">
+													<h1>
+														Customer <span class="table-project-n">Data</span> Table
+													</h1>
+												</div>
+											</div>
+											<div class="sparkline13-graph">
+												<div
+													class="datatable-dashv1-list custom-datatable-overright">
+													<div id="toolbar">
+														<select class="form-control dt-tb">
+															<option value="">Export Basic</option>
+															<option value="all">Export All</option>
+														</select>
+													</div>
+													<table id="table" data-toggle="table"
+														data-pagination="true" data-search="true"
+														data-show-columns="true"
+														data-show-pagination-switch="true"
+														data-show-refresh="true" data-key-events="true"
+														data-show-toggle="true" data-resizable="true"
+														data-cookie="true" data-cookie-id-table="saveId"
+														data-show-export="true" data-click-to-select="true"
+														data-toolbar="#toolbar">
+														<thead>
+															<tr>
+
+																<th data-field="customerid" data-editable="false">Customer
+																	ID</th>
+																<th data-field="customerssnid" data-editable="false">Customer
+																	SSN ID</th>
+																<th data-field="status" data-editable="false">Status</th>
+																<th data-field="message" data-editable="false">Message</th>
+																<th data-field="lastupdated" data-editable="false">Last
+																	Updated</th>
+																<th data-field="operations" data-editable="false">Operations</th>
+															</tr>
+														</thead>
+														<tbody>
+
 															<%
-														}else{
-															%>
-																<button class="ds-setting" disabled="disabled"><%=cu.getStatus() %></button>
+																for (Customer cu : cust) {
+															%><tr>
+																<td><%=cu.getCust_id()%></td>
+																<td><%=cu.getCust_ssn()%></td>
+																<td>
+																	<%
+																		if (cu.getStatus().equals("Active")) {
+																	%>
+																	<button class="pd-setting" disabled="disabled"><%=cu.getStatus()%></button>
+																	<%
+																		} else {
+																	%>
+																	<button class="ds-setting" disabled="disabled"><%=cu.getStatus()%></button>
+																	<%
+																		}
+																	%>
+																</td>
+																<td><%=cu.getMsg()%></td>
+																<td><%=cu.getLast_update()%></td>
+																<td><a href="CustomerStatus.jsp"><u>Refresh</u></a></td>
+															</tr>
 															<%
-														}
-													%>
-													</td>
-													<td><%=cu.getMsg() %></td>
-													<td><%=cu.getLast_update() %></td>
-													<td><a href="CustomerStatus.jsp">Refresh</a></td>
-												</tr><%
-													}
-												
-												%>
-												<!-- <tr>
-													<td>111</td>
-													<td>111</td>
-													<td>
-														<button class="pd-setting" disabled="disabled">Active</button>
-													</td>
-													<td>Account Created</td>
-													<td>6-15-2020 10:11:10</td>
-													<td><a href="">Refresh</a></td>
-												</tr> -->
-												<!-- <tr>
-													<td>111</td>
-													<td>111</td>
-													<td>
-														<button class="ds-setting" disabled="disabled">In Active</button>
-													</td>
-													<td>Account Created</td>
-													<td>6-15-2020 10:11:10</td>
-													<td><a href="">Refresh</a></td>
-												</tr> -->
-											</table>
-										</div>
-										<div class="custom-pagination">
-											<ul class="pagination">
-												<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-												<li class="page-item"><a class="page-link" href="#">1</a></li>
-												<li class="page-item"><a class="page-link" href="#">2</a></li>
-												<li class="page-item"><a class="page-link" href="#">3</a></li>
-												<li class="page-item"><a class="page-link" href="#">Next</a></li>
-											</ul>
+																}
+															%>
+														</tbody>
+													</table>
+												</div>
+											</div>
 										</div>
 									</div>
-
-
-
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			</br>
-			<div class="footer-copyright-area">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="footer-copy-right">
-								<p>
-									Copyright © 2018. All rights reserved. Template by <a
-										href="https://colorlib.com/wp/templates/">Colorlib</a>
-								</p>
-							</div>
-						</div>
+						<!-- Static Table End -->
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
+	</br>
+	<div class="footer-copyright-area">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer-copy-right">
+						<p>
+							Copyright © 2018. All rights reserved. Template by <a
+								href="https://colorlib.com/wp/templates/">Colorlib</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 	</div>
 	<!-- jquery
 		============================================ -->
@@ -229,6 +236,14 @@
 	<!-- bootstrap JS
 		============================================ -->
 	<script src="js/bootstrap.min.js"></script>
+	<!-- data table JS
+            ============================================ -->
+	<script src="js/bootstrap-table.js"></script>
+	<script src="js/tableExport.js"></script>
+	<script src="js/data-table-active.js"></script>
+	<script src="js/bootstrap-table-resizable.js"></script>
+	<script src="js/colResizable-1.5.source.js"></script>
+	<script src="js/bootstrap-table-export.js"></script>
 </body>
 
 </html>
