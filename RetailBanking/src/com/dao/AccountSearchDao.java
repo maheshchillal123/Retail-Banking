@@ -20,10 +20,10 @@ public class AccountSearchDao {
 		con = DatabaseUtil.getConnection();
 		String query = null;
 		if(acc_id!="") {
-			query = "select account.customer_id,account.account_id,account.account_type,account.balance from casestudy.account where account_id="+Integer.parseInt(acc_id);
+			query = "select account.customer_id,account.account_id,account.account_type,account.balance,account.acc_status from casestudy.account where account_id="+Integer.parseInt(acc_id);
 		}
 		else {
-			query = "select account.customer_id,account.account_id,account.account_type,account.balance from casestudy.account where Customer_id="+Integer.parseInt(cust_id);
+			query = "select account.customer_id,account.account_id,account.account_type,account.balance,account.acc_status from casestudy.account where Customer_id="+Integer.parseInt(cust_id);
 		}
 		ps = con.prepareStatement(query);
 		ArrayList<Account> lst=new ArrayList<Account>();
@@ -34,6 +34,7 @@ public class AccountSearchDao {
 			acc.setAcc_id(result.getInt("Account_id"));
 			acc.setAcc_type(result.getString("Account_type"));
 			acc.setCurrent_balance(result.getInt("Balance"));
+			acc.setAcc_status(result.getString("acc_status"));
 			lst.add(acc);
 			
 		}
