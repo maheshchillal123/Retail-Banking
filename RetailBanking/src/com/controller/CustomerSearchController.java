@@ -13,22 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.bean.Account;
 import com.bean.Customer;
-import com.dao.GetCustomerStatusDao;
-import com.service.GetAccountDataService;
+import com.service.CustomerSearchService;
+
 
 /**
- * Servlet implementation class GetAccountDataController
+ * Servlet implementation class CustomerSearchController
  */
-@WebServlet("/GetAccountDataController")
-public class GetAccountDataController extends HttpServlet {
+@WebServlet("/CustomerSearchController")
+public class CustomerSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetAccountDataController() {
+    public CustomerSearchController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,15 +41,15 @@ public class GetAccountDataController extends HttpServlet {
 		String id=request.getParameter("id").trim();
 		
 		PrintWriter out = response.getWriter();
-		GetAccountDataService service=new GetAccountDataService();
+		CustomerSearchService service=new CustomerSearchService();
 		System.out.println("hello");
 
 		try {
-				ArrayList<Account> acc_list=service.getAccountDetailsService(ssn,id);
+				ArrayList<Customer> cust_list=service.getCustomerDetailsService(ssn,id);
 				
 				ObjectMapper mapper = new ObjectMapper();
 			      //Converting the Object to JSONString
-			      String jsonString = mapper.writeValueAsString(acc_list);
+			      String jsonString = mapper.writeValueAsString(cust_list);
 				
 				response.setContentType("text/plain");
 				response.getWriter().write(jsonString);
