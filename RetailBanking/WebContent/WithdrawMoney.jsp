@@ -97,14 +97,14 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
-                                                <form action="CustomerController" method="post">
+                                                <form action="WithdrawController" method="post">
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">Customer ID</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="number" class="form-control" name="cust_id" readonly/>
+                                                                <input type="number" class="form-control" name="cust_id" value="<%=request.getParameter("customer_id") %>" readonly/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -117,7 +117,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Account ID</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                 <input type="number" class="form-control" name="acct_id" readonly/>
+                                                                 <input type="number" class="form-control" name="acct_id" value="<%=request.getParameter("account_id") %>" readonly/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -130,7 +130,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Account Type</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                 <input type="text" class="form-control" name="acct_type" readonly/>
+                                                                 <input type="text" class="form-control" name="acct_type" value="<%=request.getParameter("account_type") %>" readonly/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>
@@ -143,7 +143,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Balance</label>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                 <input type="number" class="form-control" name="balance" readonly/>
+                                                                 <input type="number" class="form-control" name="balance" value="<%=request.getParameter("balance") %>" readonly/>
                                                             </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             </div>

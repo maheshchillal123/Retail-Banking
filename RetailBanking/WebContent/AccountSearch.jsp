@@ -149,6 +149,9 @@
 																	<th>Account Id</th>
 																	<th>Account type</th>
 																	<th>Balance</th>
+																	<th>Operation</th>
+																	<th>Operation</th>
+																	<th>Operation</th>
 																</tr>
 															</thead>
 															<tbody id="tbody">
@@ -207,7 +210,7 @@
 					var trHTML = '';
 			        $.each(obj, function (i, item) {
 			            
-			            trHTML += '<tr><td>' + item.cust_id + '</td><td>' + item.acc_id + '</td><td>'+item.acc_type+'</td><td>' + item.current_balance + '</td></tr>';
+			            trHTML += '<tr><td>' + item.cust_id + '</td><td>' + item.acc_id + '</td><td>'+item.acc_type+'</td><td>' + item.current_balance + '</td><td><a href=DepositMoney.jsp?customer_id='+item.cust_id+'&account_id='+item.acc_id+'&account_type='+item.acc_type+'&balance='+item.current_balance+'>Deposit</a></td><td><a href=WithdrawMoney.jsp?customer_id='+item.cust_id+'&account_id='+item.acc_id+'&account_type='+item.acc_type+'&balance='+item.current_balance+'>Withdraw</a></td><td><a href=TransferMoney.jsp?customer_id='+item.cust_id+'&account_id='+item.acc_id+'&account_type='+item.acc_type+'&balance='+item.current_balance+'>Transfer</a></td></tr>';
 			        });
 			        
 			        $('#table').append(trHTML);
