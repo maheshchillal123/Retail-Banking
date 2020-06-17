@@ -94,57 +94,70 @@
                             </div>
                             <div class="sparkline12-graph">
                                 <div class="basic-login-form-ad">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="all-form-element-inner">
-                                                <form action="CustomerController" method="post">
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Enter Account ID</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="number" class="form-control" name="acct_id"/>
-                                                            </div>
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                     <div class="main-sparkline12-hd">
-                                   						 <center><h1>OR</h1></center>
-                               						 </div>
-                           							
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Enter Customer ID</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                 <input type="number" class="form-control" name="cust_id"/>
-                                                            </div>
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="form-group-inner">
-                                                        <div class="login-btn-inner">
-                                                            <div class="row">
-                                                                <div class="col-lg-3"></div>
-                                                                <div class="col-lg-9">
-                                                                    <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Search</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    								<div class="all-form-element-inner">
+									<input type="hidden" name="source" value="SearchCustomer">
+									<div class="row">
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;">Enter
+												Account ID</label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<input type="number" class="form-control" id="account_id"
+												name="account_id" />
+										</div>
+										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;"><h4>OR</h4></label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<label class="login2 pull-right pull-right-pro"
+												style="margin: 0px; padding: 10px 0px;">Enter
+												Customer ID</label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<input type="number" class="form-control" id="customer_id"
+												name="customer_id" />
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+											<div class="cancel-wp pull-left form-bc-ele">
+												<button class="btn btn-white" type="reset">Cancel</button>
+												<button class="btn btn-sm btn-primary login-submit-cs"
+													type="submit" onclick="getInfo()">Search</button>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+
+								</br>
+								
+								<div class="sparkline8-list">
+												<div class="sparkline8-hd">
+													<div class="main-sparkline8-hd">
+														<h1>Basic Table</h1>
+													</div>
+												</div>
+												<div class="sparkline8-graph">
+													<div class="static-table-list">
+														<table class="table" id="table">
+															<thead>
+																<tr>
+																	<th>Customer Id</th>
+																	<th>Account Id</th>
+																	<th>Account type</th>
+																	<th>Balance</th>
+																</tr>
+															</thead>
+															<tbody id="tbody">
+																
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
                                 </div>
                             </div>
                         </div>
@@ -170,6 +183,44 @@
     <!-- bootstrap JS
 		============================================ -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+		function getInfo() {
+			debugger;
+			var acc_id = '';
+			var cust_id = '';
+			if (document.getElementById('account_id').value != null) {
+				acc_id = document.getElementById('account_id').value;
+			}
+			if (document.getElementById('customer_id').value != null) {
+				cust_id = document.getElementById('customer_id').value;
+			}
+			$.ajax({
+				url : 'AccountSearchController',
+				data : {
+					acc_id : acc_id,
+					cust_id : cust_id
+				},
+				success : function(responseText) {
+					var obj = JSON.parse(responseText);
+
+					var trHTML = '';
+			        $.each(obj, function (i, item) {
+			            
+			            trHTML += '<tr><td>' + item.cust_id + '</td><td>' + item.acc_id + '</td><td>'+item.acc_type+'</td><td>' + item.current_balance + '</td></tr>';
+			        });
+			        
+			        $('#table').append(trHTML);
+					  
+				},
+				//If there was no resonse from the server
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Something really bad happened " + textStatus);
+					$("#ajaxResponse").html(jqXHR.responseText);
+				},
+			});
+		}
+	</script>
 </body>
 
 </html>
