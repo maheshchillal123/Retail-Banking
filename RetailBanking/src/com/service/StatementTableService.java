@@ -12,4 +12,7 @@ public class StatementTableService {
 		return dao.getStatementTableDao(acc_id,no_trans);
 		
 	}
+	public ArrayList<Transfer>getStatementStatusTableByDate(String acc_id,String start,String end) throws SQLException{
+		return dao.getStatementTableByDate(acc_id,start,end);
+	}
 }

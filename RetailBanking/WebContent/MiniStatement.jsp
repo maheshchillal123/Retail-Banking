@@ -4,6 +4,10 @@
 <%@ page import="com.bean.Transfer"%>
 <%@ page import="com.service.CustomerStatusTableService"%>
 <%@ page import="com.service.StatementTableService"%>
+<%@ page import="java.text.DateFormat"%>
+<%@ page import="java.text.ParseException"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,6 +132,15 @@
 								trans = service.getStatementStatusTable(request.getParameter("acc_id"),no_trans);
 							}else{
 								System.out.println(request.getParameter("start")+" "+request.getParameter("end"));
+								DateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+								
+						        Date date = sdf.parse(request.getParameter("start"));
+						        String start=new SimpleDateFormat("yyyy-MM-dd").format(date);
+						        
+						        Date date1 = sdf.parse(request.getParameter("end"));
+						        String end=new SimpleDateFormat("yyyy-MM-dd").format(date1);
+						        
+								trans = service.getStatementStatusTableByDate(request.getParameter("acc_id"),start,end);
 							}
 						%>
 
