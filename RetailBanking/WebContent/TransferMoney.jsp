@@ -179,7 +179,7 @@
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 															<input type="number" class="form-control"
-																name="transfer_amt" />
+																name="transfer_amt" required="required"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>

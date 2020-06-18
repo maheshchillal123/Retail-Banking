@@ -113,7 +113,7 @@
 																SSN Id</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" name="cust_ssn" />
+															<input type="number" class="form-control" name="cust_ssn" required="required"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -125,7 +125,7 @@
 																Name</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="text" class="form-control" name="cust_name" />
+															<input type="text" class="form-control" name="cust_name" required="required"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -136,7 +136,7 @@
 															<label class="login2 pull-right pull-right-pro">Age</label>
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-															<input type="number" class="form-control" name="cust_age" />
+															<input type="number" class="form-control" name="cust_age" required="required"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
@@ -148,7 +148,7 @@
 														</div>
 														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 															<input type="text" class="form-control"
-																name="cust_address" />
+																name="cust_address" required="required"/>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
 													</div>
