@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.bean.Transfer"%>
 <%@ page import="com.service.CustomerStatusTableService"%>
@@ -53,8 +53,8 @@
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
-												</li>
+												<li class="nav-item"><a href="Home.jsp"
+													class="nav-link">Home</a></li>
 												<li class="nav-item dropdown res-dis-nn"><a href="#"
 													data-toggle="dropdown" role="button" aria-expanded="false"
 													class="nav-link dropdown-toggle">Customer Management <span
@@ -89,18 +89,8 @@
 															Search</a> <a href="AccountSearch.jsp" class="dropdown-item">Account
 															Search</a>
 													</div></li>
-												<li class="nav-item dropdown res-dis-nn"><a href="#"
-													data-toggle="dropdown" role="button" aria-expanded="false"
-													class="nav-link dropdown-toggle">Account Operations <span
-														class="angle-down-topmenu"><i
-															class="fa fa-angle-down"></i></span></a>
-													<div role="menu" class="dropdown-menu animated zoomIn">
-														<a href="DepositMoney.jsp" class="dropdown-item">Deposit
-															Money</a> <a href="WithdrawMoney.jsp" class="dropdown-item">Withdraw
-															Money</a> <a href="TransferMoney.jsp" class="dropdown-item">Transfer
-															Money</a> <a href="AccountStatement.jsp"
-															class="dropdown-item">Print Account Statement</a>
-													</div></li>
+												<li class="nav-item"><a href="AccountStatement.jsp"
+													class="nav-link">Print Account Statement</a></li>
 												<li class="nav-item"><a href="Logout.jsp"
 													class="nav-link">Logout</a></li>
 											</ul>
@@ -125,24 +115,24 @@
 						</div>
 
 						<%
-						ArrayList<Transfer> trans = new ArrayList<Transfer>();
+							ArrayList<Transfer> trans = new ArrayList<Transfer>();
 						StatementTableService service = new StatementTableService();
-							if(request.getParameter("optionsRadios").equals("option1")){
-								int no_trans=Integer.parseInt(request.getParameter("no_trans"));
-								System.out.println(no_trans);
-								trans = service.getStatementStatusTable(request.getParameter("acc_id"),no_trans);
-							}else{
-								System.out.println(request.getParameter("start")+" "+request.getParameter("end"));
-								DateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-								
-						        Date date = sdf.parse(request.getParameter("start"));
-						        String start=new SimpleDateFormat("yyyy-MM-dd").format(date);
-						        
-						        Date date1 = sdf.parse(request.getParameter("end"));
-						        String end=new SimpleDateFormat("yyyy-MM-dd").format(date1);
-						        
-								trans = service.getStatementStatusTableByDate(request.getParameter("acc_id"),start,end);
-							}
+						if (request.getParameter("optionsRadios").equals("option1")) {
+							int no_trans = Integer.parseInt(request.getParameter("no_trans"));
+							System.out.println(no_trans);
+							trans = service.getStatementStatusTable(request.getParameter("acc_id"), no_trans);
+						} else {
+							System.out.println(request.getParameter("start") + " " + request.getParameter("end"));
+							DateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+							Date date = sdf.parse(request.getParameter("start"));
+							String start = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+							Date date1 = sdf.parse(request.getParameter("end"));
+							String end = new SimpleDateFormat("yyyy-MM-dd").format(date1);
+
+							trans = service.getStatementStatusTableByDate(request.getParameter("acc_id"), start, end);
+						}
 						%>
 
 						<!-- Static Table Start -->
@@ -178,7 +168,8 @@
 														data-toolbar="#toolbar">
 														<thead>
 															<tr>
-																<th data-field="transid" data-editable="false">Transaction ID</th>
+																<th data-field="transid" data-editable="false">Transaction
+																	ID</th>
 																<th data-field="description" data-editable="false">Description</th>
 																<th data-field="date" data-editable="false">Date</th>
 																<th data-field="amount" data-editable="false">Amount</th>
@@ -219,10 +210,17 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="footer-copy-right">
-						<p>
-							Copyright © 2018. All rights reserved. Template by <a
-								href="https://colorlib.com/wp/templates/">Colorlib</a>
-						</p>
+						<p>Retail Bank Case Study Developed By :</p>
+						<div class="row">
+							<div class="col-md-6">
+								<p>Mr. Mahesh Shivabasappa Chillal --> CT20182444458</p>
+								<p>Mr. Kiran Krishna Joshi --> CT20192628008</p>
+							</div>
+							<div class="col-md-6">
+								<p>Miss. Gayatri Prabhakar Gundla --> CT20182444807</p>
+								<p>Miss. Sajiri Sunil Gokak --> CT20182445124</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

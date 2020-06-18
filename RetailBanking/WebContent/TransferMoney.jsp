@@ -43,8 +43,8 @@
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
-												</li>
+												<li class="nav-item"><a href="Home.jsp"
+													class="nav-link">Home</a></li>
 												<li class="nav-item dropdown res-dis-nn"><a href="#"
 													data-toggle="dropdown" role="button" aria-expanded="false"
 													class="nav-link dropdown-toggle">Customer Management <span
@@ -79,18 +79,8 @@
 															Search</a> <a href="AccountSearch.jsp" class="dropdown-item">Account
 															Search</a>
 													</div></li>
-												<li class="nav-item dropdown res-dis-nn"><a href="#"
-													data-toggle="dropdown" role="button" aria-expanded="false"
-													class="nav-link dropdown-toggle">Account Operations <span
-														class="angle-down-topmenu"><i
-															class="fa fa-angle-down"></i></span></a>
-													<div role="menu" class="dropdown-menu animated zoomIn">
-														<a href="DepositMoney.jsp" class="dropdown-item">Deposit
-															Money</a> <a href="WithdrawMoney.jsp" class="dropdown-item">Withdraw
-															Money</a> <a href="TransferMoney.jsp" class="dropdown-item">Transfer
-															Money</a> <a href="AccountStatement.jsp"
-															class="dropdown-item">Print Account Statement</a>
-													</div></li>
+												<li class="nav-item"><a href="AccountStatement.jsp"
+													class="nav-link">Print Account Statement</a></li>
 												<li class="nav-item"><a href="Logout.jsp"
 													class="nav-link">Logout</a></li>
 											</ul>
@@ -168,10 +158,12 @@
 																	target = "S";
 																}
 																%>
-																<input type="hidden" name="src_account" value="<%=request.getParameter("account_id")%>">
-																<input type="hidden" name="src_balance" value="<%=request.getParameter("balance")%>">
-																<input type="text" class="form-control"
-																	name="taracct_type" value="<%=target%>" readonly />
+																<input type="hidden" name="src_account"
+																	value="<%=request.getParameter("account_id")%>">
+																<input type="hidden" name="src_balance"
+																	value="<%=request.getParameter("balance")%>"> <input
+																	type="text" class="form-control" name="taracct_type"
+																	value="<%=target%>" readonly />
 															</div>
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
@@ -197,26 +189,27 @@
 														<div class="row">
 															<div class="col-lg-3"></div>
 															<div class="col-lg-9">
-																<div class="login-horizental cancel-wp pull-left form-bc-ele">
+																<div
+																	class="login-horizental cancel-wp pull-left form-bc-ele">
 
 																	<%
 																		try {
 																		ArrayList<Account> lst = TransferDao.checkStatusOfTarget(request.getParameter("customer_id"));
 																		if (lst.get(0).getAcc_status().equals("Active") && lst.get(lst.size() - 1).getAcc_status().equals("Active")) {
 																	%>
-																	
+
 																	<button class="btn btn-white" type="submit">Cancel</button>
 																	<button class="btn btn-sm btn-primary login-submit-cs"
 																		type="submit">Transfer</button>
 																	<%
-																		}else{
-																			PrintWriter o=response.getWriter();
-																			o.println("<script type=\"text/javascript\">");
-																			o.println("alert('Target Account Deleted You cannot make a Transation.');");
-																			o.println("location='AccountSearch.jsp'");
-																			o.println("</script>");
-																			
-																		}
+																		} else {
+																		PrintWriter o = response.getWriter();
+																		o.println("<script type=\"text/javascript\">");
+																		o.println("alert('Target Account Deleted You cannot make a Transation.');");
+																		o.println("location='AccountSearch.jsp'");
+																		o.println("</script>");
+
+																	}
 																	} catch (Exception e) {
 																		System.out.println(e.toString());
 																	}
@@ -241,10 +234,17 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="footer-copy-right">
-								<p>
-									Copyright © 2018. All rights reserved. Template by <a
-										href="https://colorlib.com/wp/templates/">Colorlib</a>
-								</p>
+								<p>Retail Bank Case Study Developed By :</p>
+								<div class="row">
+									<div class="col-md-6">
+										<p>Mr. Mahesh Shivabasappa Chillal --> CT20182444458</p>
+										<p>Mr. Kiran Krishna Joshi --> CT20192628008</p>
+									</div>
+									<div class="col-md-6">
+										<p>Miss. Gayatri Prabhakar Gundla --> CT20182444807</p>
+										<p>Miss. Sajiri Sunil Gokak --> CT20182445124</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

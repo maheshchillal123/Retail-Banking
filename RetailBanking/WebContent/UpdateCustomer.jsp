@@ -40,8 +40,8 @@
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
-												</li>
+												<li class="nav-item"><a href="Home.jsp"
+													class="nav-link">Home</a></li>
 												<li class="nav-item dropdown res-dis-nn"><a href="#"
 													data-toggle="dropdown" role="button" aria-expanded="false"
 													class="nav-link dropdown-toggle">Customer Management <span
@@ -76,18 +76,8 @@
 															Search</a> <a href="AccountSearch.jsp" class="dropdown-item">Account
 															Search</a>
 													</div></li>
-												<li class="nav-item dropdown res-dis-nn"><a href="#"
-													data-toggle="dropdown" role="button" aria-expanded="false"
-													class="nav-link dropdown-toggle">Account Operations <span
-														class="angle-down-topmenu"><i
-															class="fa fa-angle-down"></i></span></a>
-													<div role="menu" class="dropdown-menu animated zoomIn">
-														<a href="DepositMoney.jsp" class="dropdown-item">Deposit
-															Money</a> <a href="WithdrawMoney.jsp" class="dropdown-item">Withdraw
-															Money</a> <a href="TransferMoney.jsp" class="dropdown-item">Transfer
-															Money</a> <a href="AccountStatement.jsp"
-															class="dropdown-item">Print Account Statement</a>
-													</div></li>
+												<li class="nav-item"><a href="AccountStatement.jsp"
+													class="nav-link">Print Account Statement</a></li>
 												<li class="nav-item"><a href="Logout.jsp"
 													class="nav-link">Logout</a></li>
 											</ul>
@@ -292,10 +282,17 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="footer-copy-right">
-								<p>
-									Copyright © 2018. All rights reserved. Template by <a
-										href="https://colorlib.com/wp/templates/">Colorlib</a>
-								</p>
+								<p>Retail Bank Case Study Developed By :</p>
+								<div class="row">
+									<div class="col-md-6">
+										<p>Mr. Mahesh Shivabasappa Chillal --> CT20182444458</p>
+										<p>Mr. Kiran Krishna Joshi --> CT20192628008</p>
+									</div>
+									<div class="col-md-6">
+										<p>Miss. Gayatri Prabhakar Gundla --> CT20182444807</p>
+										<p>Miss. Sajiri Sunil Gokak --> CT20182445124</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

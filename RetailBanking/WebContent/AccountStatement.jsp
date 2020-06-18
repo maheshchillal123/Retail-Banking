@@ -28,14 +28,14 @@
 <link rel="stylesheet" href="css/custom.css">
 <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/fullcalendar.print.min.css">
+<link rel="stylesheet" href="css/fullcalendar.min.css">
+<link rel="stylesheet" href="css/fullcalendar.print.min.css">
 <!-- datapicker CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/datepicker3.css">
+<link rel="stylesheet" href="css/datepicker3.css">
 <!-- select2 CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/select2.min.css">
+<link rel="stylesheet" href="css/select2.min.css">
 </head>
 <body>
 	<div class="all-content-wrapper" style="margin-left: 0;">
@@ -49,8 +49,8 @@
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
-												</li>
+												<li class="nav-item"><a href="Home.jsp"
+													class="nav-link">Home</a></li>
 												<li class="nav-item dropdown res-dis-nn"><a href="#"
 													data-toggle="dropdown" role="button" aria-expanded="false"
 													class="nav-link dropdown-toggle">Customer Management <span
@@ -85,18 +85,8 @@
 															Search</a> <a href="AccountSearch.jsp" class="dropdown-item">Account
 															Search</a>
 													</div></li>
-												<li class="nav-item dropdown res-dis-nn"><a href="#"
-													data-toggle="dropdown" role="button" aria-expanded="false"
-													class="nav-link dropdown-toggle">Account Operations <span
-														class="angle-down-topmenu"><i
-															class="fa fa-angle-down"></i></span></a>
-													<div role="menu" class="dropdown-menu animated zoomIn">
-														<a href="DepositMoney.jsp" class="dropdown-item">Deposit
-															Money</a> <a href="WithdrawMoney.jsp" class="dropdown-item">Withdraw
-															Money</a> <a href="TransferMoney.jsp" class="dropdown-item">Transfer
-															Money</a> <a href="AccountStatement.jsp"
-															class="dropdown-item">Print Account Statement</a>
-													</div></li>
+												<li class="nav-item"><a href="AccountStatement.jsp"
+													class="nav-link">Print Account Statement</a></li>
 												<li class="nav-item"><a href="Logout.jsp"
 													class="nav-link">Logout</a></li>
 											</ul>
@@ -176,34 +166,36 @@
 																End Dates
 															</div>
 														</div>
-														
+
 														<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 															<div class="form-group data-custon-pick data-custom-mg"
-															id="data_5">
-															<div class="input-daterange input-group" id="datepicker">
-																<input type="text" class="form-control" name="start"
-																	value="05/14/2014" /> <span class="input-group-addon">to</span>
-																<input type="text" class="form-control" name="end"
-																	value="05/22/2014" />
+																id="data_5">
+																<div class="input-daterange input-group" id="datepicker">
+																	<input type="text" class="form-control" name="start"
+																		value="05/14/2014" /> <span class="input-group-addon">to</span>
+																	<input type="text" class="form-control" name="end"
+																		value="05/22/2014" />
+																</div>
 															</div>
-														</div>
 														</div>
 
 													</div>
 												</div>
 												<div class="form-group-inner">
-                                                        <div class="login-btn-inner">
-                                                            <div class="row">
-                                                                <div class="col-lg-3"></div>
-                                                                <div class="col-lg-9">
-                                                                    <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="reset">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Submit</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+													<div class="login-btn-inner">
+														<div class="row">
+															<div class="col-lg-3"></div>
+															<div class="col-lg-9">
+																<div
+																	class="login-horizental cancel-wp pull-left form-bc-ele">
+																	<button class="btn btn-white" type="reset">Cancel</button>
+																	<button class="btn btn-sm btn-primary login-submit-cs"
+																		type="submit">Submit</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</form>
 										</div>
 									</div>
@@ -219,10 +211,17 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="footer-copy-right">
-								<p>
-									Copyright © 2018. All rights reserved. Template by <a
-										href="https://colorlib.com/wp/templates/">Colorlib</a>
-								</p>
+								<p>Retail Bank Case Study Developed By :</p>
+								<div class="row">
+									<div class="col-md-6">
+										<p>Mr. Mahesh Shivabasappa Chillal --> CT20182444458</p>
+										<p>Mr. Kiran Krishna Joshi --> CT20192628008</p>
+									</div>
+									<div class="col-md-6">
+										<p>Miss. Gayatri Prabhakar Gundla --> CT20182444807</p>
+										<p>Miss. Sajiri Sunil Gokak --> CT20182445124</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -238,12 +237,12 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- datapicker JS
 		============================================ -->
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/datepicker-active.js"></script>
-    <!-- select2 JS
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/datepicker-active.js"></script>
+	<!-- select2 JS
 		============================================ -->
-    <script src="js/select2.full.min.js"></script>
-    <script src="js/select2-active.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/select2-active.js"></script>
 </body>
 
 </html>
