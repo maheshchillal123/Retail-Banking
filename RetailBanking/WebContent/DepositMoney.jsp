@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
 <meta name="description" content="">
+<title>deposit Money</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts
 		============================================ -->
@@ -37,7 +37,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="header-top-menu tabl-d-n">
                                                 <ul class="nav navbar-nav mai-top-nav">
-                                                    <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                                    <li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
                                                     </li>
                                                     <li class="nav-item dropdown res-dis-nn">
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Customer Management <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
@@ -170,7 +170,7 @@
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left form-bc-ele">
                                                                         <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Submit</button>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Deposit</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

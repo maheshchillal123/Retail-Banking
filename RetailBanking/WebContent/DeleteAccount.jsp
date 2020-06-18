@@ -5,6 +5,7 @@
 <head>
 <head>
 <meta name="description" content="">
+<title>Delete Account</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google Fonts
 		============================================ -->
@@ -45,7 +46,7 @@
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="#" class="nav-link">Home</a>
+												<li class="nav-item"><a href="Home.jsp" class="nav-link">Home</a>
 												</li>
 												<li class="nav-item dropdown res-dis-nn"><a href="#"
 													data-toggle="dropdown" role="button" aria-expanded="false"
@@ -168,7 +169,7 @@
 											<div class="sparkline8-list">
 												<div class="sparkline8-hd">
 													<div class="main-sparkline8-hd">
-														<h1>Basic Table</h1>
+														<h1>Customer Table</h1>
 													</div>
 												</div>
 												<div class="sparkline8-graph">
