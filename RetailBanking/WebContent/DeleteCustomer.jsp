@@ -243,17 +243,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="footer-copy-right">
-								<p>Retail Bank Case Study Developed By :</p>
-								<div class="row">
-									<div class="col-md-6">
-										<p>Mr. Mahesh Shivabasappa Chillal --> CT20182444458</p>
-										<p>Mr. Kiran Krishna Joshi --> CT20192628008</p>
-									</div>
-									<div class="col-md-6">
-										<p>Miss. Gayatri Prabhakar Gundla --> CT20182444807</p>
-										<p>Miss. Sajiri Sunil Gokak --> CT20182445124</p>
-									</div>
-								</div>
+								<p>Retail Bank Case Study Developed By : Mahesh Chillal</p>
 							</div>
 						</div>
 					</div>
